@@ -1,21 +1,12 @@
-/* _master.scss */
-
 /* ============ LIBRARIES ============ */
-@import "external/flexbox-grid";
-// @import "external/tiny-slider-2.9.2.min";
+@import "external/tiny-slider292";
 
-/* ============ BASE ============ */
+
 @import "base/variables";
 @import "base/reset";
 @import "base/typography";
 @import "base/buttons";
 
-/* ============ SITEWRENCH ============ */
-@import url("../../global/CSS/global.css");
-@import "sitewrench/alert";
-@import "sitewrench/forms";
-@import "sitewrench/photo-gallery";
-@import "sitewrench/tabbed-content";
 
 /* ============ COMPONENTS ============ */
 @import "components/header";
