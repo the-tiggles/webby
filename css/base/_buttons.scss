@@ -1,0 +1,29 @@
+/* _buttons.scss */
+
+// Base styles as mixin, then @include into various versions
+@mixin button {
+	
+
+	&:hover {
+		
+	}
+}
+
+.button {
+	@include button;
+
+	&:hover {
+		
+	}
+}
+
+.button-outline {
+	@include button;
+
+	&:hover {
+		
+	}
+}
+
+
+

@@ -1,0 +1,72 @@
+/* _reset.scss */
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  margin: 0;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.locked {overflow: hidden;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Change color & bg color of selected live text
+*::selection {
+  background-color: $primary;
+  color: white;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.clearfix::before, .clearfix::after {
+  content: '';
+  display: table;
+}
+
+.clearfix::after { clear: both; }
+
+// if using a sticky nav, use this to add space above anchor links to go below navbar
+*:target::before {
+  content: '';
+  display: block;
+  height: 90px;
+  margin: -90px 0 0;
+}
+
+*:target::before:focus {
+  outline: none;
+}
+
+*:target:focus {
+  outline: none;
+}
+
+hr {
+  width: 100%;
+}
+
+a, a:visited, a:hover, a:focus, input, input:hover {
+  transition: all .33s ease;
+  text-decoration: none;
+}

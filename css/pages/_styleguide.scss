@@ -1,0 +1,26 @@
+/* _styleguide.scss */
+
+body.styleguide {
+	hr {
+		margin: 50px 0 20px;
+	}
+}
+
+.swatch {
+	background: var(--color);
+	border-radius: 8px;
+	display: inline-block;
+	height: 80px;
+	margin: 0 8px 8px 0;
+	text-align: center;
+	width: 80px;
+
+	&::after {
+		content: attr(color);
+		display: block;
+		font: normal 16px monospace;
+		margin-bottom: 16px;
+		position: relative;
+		top: calc(100% + 4px);
+	}
+}

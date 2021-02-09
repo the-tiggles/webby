@@ -1,0 +1,104 @@
+/* _mixins.scss */
+
+/* ============ Pseudo Element Overlay ============ */
+
+.shade {
+    position: relative;
+
+    &::before {
+        background: black;
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        transition: opacity 0.25s ease;
+        width: 100%;
+        z-index: 0;
+    }
+}
+
+/* ============ BG Images ============ */
+
+.bg-image,
+.bg-image-js {
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ============ Paddding Adjustments ============ */
+
+.no-border  { border: 0; }
+.no-padding { padding: 0; }
+.no-margin  { margin: 0; }
+
+.cushion-sm { padding: 2%; }
+.cushion-md { padding: 5%; }
+.cushion-lg { padding: 10%; }
+
+.cushion-v-sm { padding: 2% 0; }
+.cushion-v-md { padding: 5% 0; }
+.cushion-v-lg { padding: 10% 0; }
+
+.cushion-h-sm { padding: 0 2%; }
+.cushion-h-md { padding: 0 5%; }
+.cushion-h-lg { padding: 0 10%; }
+
+.white { color: white !important; }
+
+/* ============ Alignment ============ */
+
+.center { text-align: center; }
+
+.centered {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.v-centered {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.h-centered {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-spread {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* ============ Transitions ============ */
+
+.transition-cubic  { transition: all 0.55s cubic-bezier(0.645, 0.045, 0.355, 1); }
+.transition-fast   { transition: all 0.2s ease; }
+.transition        { transition: all 0.5s ease; }
+.transition-slow   { transition: all 1s ease; }
+.transition-bounce { transition: all 0.3s cubic-bezier(0.33, 2, 0.8, 1); }
+.easeInOutBack     { transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+
+/* ============ Animation delays ============ */
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }

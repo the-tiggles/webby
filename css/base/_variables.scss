@@ -1,0 +1,43 @@
+/* _variables.scss */
+
+/* ============ Colors ============ */
+
+$primary: #e01212;
+
+/* ============ Fonts ============ */
+
+$serif: 'Playfair Display', serif;
+$sans-serif: 'Open Sans', sans-serif;
+
+/* ============ Breakpoints ============ */
+
+/*
+.example {
+  width: 100%;
+  
+  @include bp-sm {
+    width: 50%;
+  }
+}
+*/
+
+@mixin bp-sm {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin bp-md {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin bp-lg {
+  @media only screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+
+

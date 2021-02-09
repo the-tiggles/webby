@@ -1,0 +1,39 @@
+/* _sitemap.scss */
+
+.sitemap {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			display: block;
+		}
+
+		// top level
+		> li {
+			font: bold 2.4rem serif;
+			margin-top: 12px;
+
+			> ul {
+				padding-left: 16px;
+
+				// second level
+				> li {
+					font: bold 2rem sans-serif;
+					margin-top: 8px;
+
+					> ul {
+						padding-left: 16px;
+
+						// third level
+						> li {
+							font: normal 1.6rem sans-serif;
+							margin-top: 4px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

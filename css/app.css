@@ -1,0 +1,31 @@
+/*
+Apps reference app.css for content that is displayed as HTML. Custom Content and the Blog Detail View do this.
+The blog detail view has a class applied to the body tag "app-css-blog-detail"
+
+Note: In-App browsers for iOS and Android render styles differently. You can use -webkit to target iOS.
+
+Any external files referenced will need to use the full path to the file because this is an app, not a website.
+*/
+
+
+/* Add the correct SITEID and uncomment the line below to import your master.css file for the app to use. You don't have to do this and if the app doesn't need the files, you can just delete this. */
+/* @import url("https:/sitefiles/SITEID/css/master.css"); */
+
+*, body.app-css-blog-detail { 
+	-webkit-text-size-adjust: 200%;
+}
+
+body, body.app-css-blog-detail { 
+	padding: 10px 30px 10px 40px;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+	.sw-accordion .tabbedcontent-header {
+		-webkit-padding-start: 150px;
+		-webkit-min-logical-height: 180px;
+	}
+}
+
+.sw-accordion .tabbedcontent-header {
+	padding-right: 20px;
+}

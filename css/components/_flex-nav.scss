@@ -1,0 +1,76 @@
+/* _flex-nav.scss */
+
+nav.flex-nav {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0;
+
+    ul#mainnav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            flex: 0 1 auto;
+
+            a {
+                display: flex;
+
+                &:hover {
+                    background: #ddd;
+                }
+            }
+
+            > a.current {
+                background: #ddd;
+            }
+
+            ul {
+                display: none;
+                flex-direction: column;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                z-index: 2000;
+
+                > li {
+                    display: block;
+                    position: relative;
+                    white-space: nowrap;
+                    z-index: 999;
+
+                    a {
+                        background: #eee;
+                        display: block;
+                        padding: 8px 12px;
+                        width: 100%;
+                    }
+
+                    ul {
+                        left: 100%;
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        > li {
+            &:hover > ul,
+            > ul > li:hover > ul {
+                display: flex;
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+/* _helpers.scss */
+
+/* ============ Responsive Embed Wrapper ============ */
+
+.embed-container {
+    height: 0;
+    max-width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+    position: relative;
+
+    iframe, 
+    object, 
+    embed {
+        border: none;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
