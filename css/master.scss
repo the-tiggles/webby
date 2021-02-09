@@ -1,12 +1,11 @@
+/* _master.scss */
 /* ============ LIBRARIES ============ */
-@import "external/tiny-slider292";
-
+@import "external/tiny-slider";
 
 @import "base/variables";
 @import "base/reset";
 @import "base/typography";
 @import "base/buttons";
-
 
 /* ============ COMPONENTS ============ */
 @import "components/header";
