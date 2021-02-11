@@ -1,5 +1,6 @@
 /* _master.scss */
 /* ============ LIBRARIES ============ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 .tns-outer {
   padding: 0 !important;
 }
@@ -255,6 +256,10 @@ a, a:visited, a:hover, a:focus, input, input:hover {
 /* _typography.scss */
 /* ============ FONTS ============ */
 /* ============ TAGS ============ */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
 /* _buttons.scss */
 /* ============ COMPONENTS ============ */
 /* _header.scss */
@@ -457,10 +462,10 @@ nav.flex-nav ul#mainnav > li > ul > li:hover > ul {
   left: inherit;
   opacity: 1;
   right: -300px;
-  -webkit-transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
-  transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
-  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
-  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
+  -webkit-transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
+  transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
+  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
+  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
 }
 
 #sidecar.slide-right.active {
