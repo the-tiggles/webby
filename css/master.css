@@ -175,6 +175,7 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 62.5%;
+  background-color: #000613;
 }
 
 body {
@@ -203,12 +204,12 @@ img {
 }
 
 *::-moz-selection {
-  background-color: #e01212;
+  background-color: #24A0ED;
   color: white;
 }
 
 *::selection {
-  background-color: #e01212;
+  background-color: #24A0ED;
   color: white;
 }
 
@@ -456,10 +457,10 @@ nav.flex-nav ul#mainnav > li > ul > li:hover > ul {
   left: inherit;
   opacity: 1;
   right: -300px;
-  -webkit-transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
-  transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
-  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
-  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
+  -webkit-transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
+  transition: left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
+  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out;
+  transition: transform 0.44s ease-in-out, left 0.44s ease-in-out, right 0.44s ease-in-out, -webkit-transform 0.44s ease-in-out;
 }
 
 #sidecar.slide-right.active {
