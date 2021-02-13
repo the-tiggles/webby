@@ -14,9 +14,6 @@ $(document).ready(function() {
         SIDEBAR = SIDEBAR || {},
         SITEWIDE = SITEWIDE || {},
         STICKY_NAV = STICKY_NAV || {},
-        BACKGROUND_IMAGE = BACKGROUND_IMAGE || {},
-        VIDEO_EMBED = VIDEO_EMBED || {},
-        SMOOTH_SCROLL = SMOOTH_SCROLL || {},
         
         // Pages
   
@@ -43,9 +40,6 @@ $(document).ready(function() {
         SIDEBAR.init();
         SITEWIDE.init();
         STICKY_NAV.init();
-        BACKGROUND_IMAGE.init();
-        VIDEO_EMBED.init();
-        SMOOTH_SCROLL.init();
         
         // Initialize Page Template Objects
         if (isHome) { HOME.init(); }
@@ -64,12 +58,20 @@ $(document).ready(function() {
     SIDEBAR = {
       init: function() {
         this.loadIt();
+        this.checkTab();
       },
       loadIt: function() {
           $.ajaxSetup ({
               cache: false
           });
           $('#sidebar').load('includes/sidebar.html');
+      },
+      checkTab: function() {
+        setTimeout(function() {
+          var homeClass =  $("body").attr("class");
+          $('.sidebar-item#' + homeClass).addClass("active");
+        }, 500)
+        
       }
   
      
@@ -82,12 +84,18 @@ $(document).ready(function() {
     SITEWIDE = {
       init: function() {
         this.loadGoogleSearch();
+        this.loadUtility();
       },
       loadGoogleSearch: function() {
           $.ajaxSetup ({
               cache: false
           });
           $('#google-search').load('includes/part-search-google.html');
+      },
+      loadUtility: function() {
+        if ($('body.home').length) {
+          $('#utility-bar').load('includes/utility-home.html');
+        }
       }
   
      
@@ -104,37 +112,10 @@ $(document).ready(function() {
 
     };
   
-    // ================================
-    // Background Image JS
-    // ================================
-  
-    BACKGROUND_IMAGE = {
-      init: function() {
 
-      },
   
-      
-    };
-  
-    // ================================
-    // Iframe Video Embeds
-    // ================================
-  
-    VIDEO_EMBED = {
-      init: function() {
-      },
-  
-    };
-  
-    // ================================
-    // Smooth scrolling anchors
-    // ================================
-  
-    SMOOTH_SCROLL = {
-      init: function() {
-      },
-  
-    };
+ 
+
   
     // ================================
     // Homepage
@@ -142,8 +123,66 @@ $(document).ready(function() {
   
     HOME = {
       init: function() {
+        this.homeUtility();
+        this.searchStyling();
+        this.weatherWidget();
   
       },
+      homeUtility: function() {
+
+      },
+      searchStyling: function() {
+        function checkForItem(elementName) {
+          if ($(elementName).length >= 1) {
+              clearInterval(elementChecker);
+              //Perform whatever actions you want, here.
+              $('#google-search input[type="text"]').attr('placeholder', 'Search Google');
+
+              $(document).on('keydown', function(event) {
+                if (event.key =="Escape" && $('#google-search input[type="text"]').is(':focus')) {
+                  $('#google-search input[type="text"]').blur();
+                }
+                if (event.key == "Escape" && !$('#google-search input[type="text"]').is(':focus')) {
+                  $('#google-search input[type="text"]').focus();
+                } 
+              })
+          }
+        } 
+        var elementChecker = setInterval(function() { checkForItem("#google-search input[type='text']"); }, 500);
+        
+      },
+      weatherWidget: function() {
+        var OWM_api = 'd3dbee43ce83080a383c1aae158663ba',
+        userZip = Cookies.get('userZip');
+        if (userZip == undefined) {
+          console.log('no such cookie exists');
+          setTimeout(function() {
+            $('#weather-signin').removeClass('hidden');
+          }, 1000)
+        }
+
+        // register user's zip as cookie var
+        function submitZip() {
+          if ($('input#userZip').val().length) {
+            var inputZip = $('input#userZip').val();
+            Cookies.set('userZip', inputZip);
+            console.log('cookie is now created w zip of ' + inputZip);
+          }
+        }
+
+        $(document).on('keydown', function(event) {
+          if (event.key == 13 && $('#userZip').is(':focus')) {
+            submitZip();
+          }
+        })
+        $('#weather-signin .btn-submit').on('click', function() {
+          submitZip();
+        })
+
+
+
+      }
+
     };
   
     // ================================
@@ -152,8 +191,9 @@ $(document).ready(function() {
   
     DEFAULT = {
       init: function() {
-        
+       
       },
+      
     };
   
     // ================================

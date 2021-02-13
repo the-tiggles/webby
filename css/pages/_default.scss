@@ -1,2 +1,34 @@
 /* _default.scss */
 
+
+.site-background {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: url(//source.unsplash.com/1500x1000/?explore,travel,city,night);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: blur(20px);
+	opacity: 0;
+	animation: fadeIn 2s ease 3s forwards;
+	.background-filter {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		content: "";
+		background-color: rgba(0,0,0,.3);
+	}
+}
+
+section#main {
+	flex-basis: calc(100% - 500px);
+	.inner-container {
+		padding: 0 15px;
+	}
+}
+section#utility-bar {
+	flex-basis: 280px;
+}

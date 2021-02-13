@@ -2,7 +2,7 @@
 
 /* ============ LIBRARIES ============ */
 @import "external/tiny-slider";
-
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import "base/variables";
 @import "base/reset";
 @import "base/typography";
@@ -13,6 +13,7 @@
 @import "components/flex-nav";
 @import "components/sidecar";
 @import "components/footer";
+@import "components/search";
 
 /* ============ HELPERS ============ */
 @import "helpers/mixins";
