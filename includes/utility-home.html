@@ -1,9 +1,28 @@
 <div class="inner-wrapper">
     <div class="weather-widget">
         <div class="hidden" id="weather-signin">
-            <div>
+            <div class="zip-form">
                 <input placeholder="Enter Zip Code" id="userZip" maxlength="5" autocomplete="off" type="number">
                 <div class="btn-submit"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div id="weather-wrapper">
+            <div class="current-weather">
+                <div class="left-side">
+                    <div class="temperature unit-c">
+                        <span class="value"></span>
+                    </div>
+                    <div class="location"><i class="fa fa-location-arrow" aria-hidden="true"></i><span class="value"></span></div>
+                </div>
+                <div class="right-side">
+                    <div class="weather-icon"></div>
+                    <span class="weather-description"></span>
+                    <span class="current-time"></span>
+                    <div class="unit-selector">
+                        <a id="metric" class="active" href="#">C</a>
+                        <a id="imperial" href="#">F</a>
+                    </div>
                 </div>
             </div>
         </div>
