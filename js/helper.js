@@ -87,7 +87,8 @@ $(document).ready(function() {
     SITEWIDE = {
       init: function() {
         this.loadGoogleSearch();
-        this.loadUtility();
+        this.searchStyling();
+        this.portalClicks();
       },
       loadGoogleSearch: function() {
           $.ajaxSetup ({
@@ -95,10 +96,34 @@ $(document).ready(function() {
           });
           $('#google-search').load('includes/part-search-google.html');
       },
-      loadUtility: function() {
-        if ($('body.home').length) {
-          $('#utility-bar').load('includes/utility-home.html');
-        }
+      searchStyling: function() {
+        function checkForItem(elementName) {
+          if ($(elementName).length >= 1) {
+              clearInterval(elementChecker);
+              //Perform whatever actions you want, here.
+              $('#google-search input[type="text"]').attr('placeholder', 'Search Google');
+              $(document).on('keydown', function(event) {
+                if (event.key =="Escape" && $('#google-search input[type="text"]').is(':focus')) {
+                  $('#google-search input[type="text"]').blur();
+                }
+                if (event.key == "Escape" && !$('#google-search input[type="text"]').is(':focus')) {
+                  $('#google-search input[type="text"]').focus();
+                } 
+              })
+          }
+        } 
+        var elementChecker = setInterval(function() { checkForItem("#google-search input[type='text']"); }, 500);
+        
+      },
+      portalClicks: function() {
+        $('#sidebar').on('click', '.sidebar-item#home', function() {
+          HOME.init();
+          WEATHER.init();
+          NEWS.init();
+        });
+        $('#sidebar').on('click', '.sidebar-item#reddit', function() {
+          REDDIT.init();
+        })
       }
   
      
@@ -122,59 +147,36 @@ $(document).ready(function() {
   
     HOME = {
       init: function() {
-        // this.homeUtility();
-        this.searchStyling();
-        this.homeMain();
-        // this.animeList();
-        this.animeListAddBtn();
-        this.animeListSearch();
-        this.animeListAddAnime();
-        this.animeListLoadCookies();
-        this.animeListClearAll();
+          this.classChanges();
+          this.transitionContent();
+          this.homeMain();
+          this.loadHomeUtility();
+          this.animeListAddBtn();
+          this.animeListSearch();
+          this.animeListAddAnime();
+          this.animeListLoadCookies();
+          this.animeListClearAll(); 
       },
-      homeUtility: function() {
+      classChanges: function() {
+        $('body').attr('class', 'home');
+
+        // sidebar icon active
+        $('.sidebar-wrapper .sidebar-item.active').removeClass('active');
+        $('.sidebar-wrapper .sidebar-item#home').addClass('active');
       },
-      searchStyling: function() {
-        function checkForItem(elementName) {
-          if ($(elementName).length >= 1) {
-              clearInterval(elementChecker);
-              //Perform whatever actions you want, here.
-              $('#google-search input[type="text"]').attr('placeholder', 'Search Google');
-              $(document).on('keydown', function(event) {
-                if (event.key =="Escape" && $('#google-search input[type="text"]').is(':focus')) {
-                  $('#google-search input[type="text"]').blur();
-                }
-                if (event.key == "Escape" && !$('#google-search input[type="text"]').is(':focus')) {
-                  $('#google-search input[type="text"]').focus();
-                } 
-              })
-          }
-        } 
-        var elementChecker = setInterval(function() { checkForItem("#google-search input[type='text']"); }, 500);
+      transitionContent: function() {
+       
+       $('#home-content').addClass('transitioning');
+       setTimeout(function() {
+         $('#home-content').removeClass('transitioning')
+       }, 1000);
         
       },
       homeMain: function() {
         $('#home-content').load('includes/part-home-main.html');
       },
-      animeList: function() {
-
-      var url = 'https://graphql.anilist.co',
-      options = {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + accessToken,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          query: query
-        })
-      };
-      fetch(url, options).then(handleResponse, handleError);
-      function handleResponse(response) {
-        console.log(response);
-      }
-      
+      loadHomeUtility: function() {
+        $('#utility-bar').load('includes/utility-home.html');
       },
       animeListAddBtn: function() {
         $(document).on('click', '.add-to-list .add-more', function() {
@@ -403,7 +405,7 @@ $(document).ready(function() {
   
           }
 
-        }, 500)
+        }, 300)
         
       },
       animeListClearAll: function() {
@@ -580,8 +582,8 @@ $(document).ready(function() {
   
     NEWS = {
       init: function() {
-        // this.fetchNews();
         this.fetchNews2();
+        this.shuffleNews();
       },
       fetchNews: function() {
         var data = {};
@@ -632,9 +634,13 @@ $(document).ready(function() {
                 var theIMG = singleArticle['media'];
               }
               
-              console.log(theName);
+              // console.log(theName);
               $('<li><a target="_blank" href="'+theLink+'" style="background-image: url('+theIMG+')"><span>'+theName+'</span></a></li>').appendTo('ul.all-news');
             }
+
+            // shuffle them now. 
+            $('ul.all-news li').shuffle();
+
           }
         });
         xhr.open("GET", "https://newscatcher.p.rapidapi.com/v1/latest_headlines?lang=en&media=True");
@@ -644,7 +650,46 @@ $(document).ready(function() {
 
         }, 1000)
         
+      },
+      shuffleNews: function() {
+
       }
+      
+    };
+
+    // ================================
+    // Reddit 
+    // ================================
+  
+    REDDIT = {
+      init: function() {
+       this.classChanges();
+       this.transitionContent();
+       this.loadRedditMain();
+       this.checkLoggedIn();
+      },
+      classChanges: function() {
+        $('body').attr('class', 'reddit');
+        $('.sidebar-wrapper .sidebar-item.active').removeClass('active');
+        $('.sidebar-wrapper .sidebar-item#reddit').addClass('active');
+      },
+      transitionContent: function() {
+       
+        $('#home-content').addClass('transitioning');
+        setTimeout(function() {
+          $('#home-content').removeClass('transitioning')
+        }, 1000);
+         
+       },
+      loadRedditMain: function() {
+        $('#home-content').load('includes/part-reddit-main.html');
+      },
+      checkLoggedIn() {
+        setTimeout(function() {
+          $('#reddit-login').removeClass('hidden');
+        }, 500)
+      }
+
       
     };
   

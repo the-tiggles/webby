@@ -4,6 +4,13 @@
 #home-content {
 	margin-top: 50px;
     position: relative;
+    transition: all .5s ease;
+    top: 0;
+    opacity: 1;
+    &.transitioning {
+        top: 100%;
+        opacity: 0;
+    }
 	.home-inner-wrapper {
 		display: flex;
 		flex-direction: row;
@@ -14,7 +21,7 @@
             animation: fadeInUp 1s ease .33s forwards;
             @for $i from 1 through 3 {
                 &:nth-child(#{$i}) {
-                    animation-delay: $i * (1s / 3);
+                    animation-delay: $i * (1s / 2);
                 }
             }
         }
