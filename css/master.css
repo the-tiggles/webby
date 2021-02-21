@@ -487,23 +487,23 @@ nav.flex-nav ul#mainnav > li > ul > li:hover > ul {
 }
 
 #site-wrapper #sidebar .sidebar-wrapper .sidebar-item div.icon-home {
-  background-image: url("/css/images/ui/home.svg");
+  background-image: url("images/ui/home.svg");
 }
 
 #site-wrapper #sidebar .sidebar-wrapper .sidebar-item div.icon-reddit {
-  background-image: url("/css/images/ui/reddit.svg");
+  background-image: url("images/ui/reddit.svg");
 }
 
 #site-wrapper #sidebar .sidebar-wrapper .sidebar-item div.icon-spotify {
-  background-image: url("/css/images/ui/spotify.svg");
+  background-image: url("images/ui/spotify.svg");
 }
 
 #site-wrapper #sidebar .sidebar-wrapper .sidebar-item div.icon-discord {
-  background-image: url("/css/images/ui/discord.svg");
+  background-image: url("images/ui/discord.svg");
 }
 
 #site-wrapper #sidebar .sidebar-wrapper .sidebar-item div.icon-settings {
-  background-image: url("/css/images/ui/tools.svg");
+  background-image: url("images/ui/tools.svg");
 }
 
 #site-wrapper #sidebar .sidebar-wrapper p {
