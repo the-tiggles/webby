@@ -1,40 +1,34 @@
-// const http = require('http')
-// const fs = require('fs')
-// const port = 3000
+const express = require('express');
+const path = require('path');
+// init app
+const app = express();
 
-// const server = http.createServer(function(req, res){
-//     res.writeHead(200, { 'Content-Type': 'text/html'})
-//     fs.readFile('./src/index.html', function(error, data) {
-//         if (error) {
-//             res.writeHead(404)
-//             res.write('Error: file not found')
-//         } else {
-//             res.write(data)
-//         }
-//         res.end()
-//     })
-// })
+//load view engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
 
-// server.listen(port, function(error) {
-//     if (error) {
-//         console.log('something went wrong', error)
-//     } else {
-//         console.log('server is listening on port ' + port)
-//     }
-// })
+app.use(express.static('public'));
+app.use('/css', express.static(__dirname + 'public/css'))
+app.use('/js', express.static(__dirname + 'public/js'))
+app.use('/img', express.static(__dirname + 'public/img'))
 
-const http = require('http');
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.write('hello world');
-        res.end();
-    }
-    if (req.url === '/api/courses') {
-        res.write(JSON.stringify([1, 2, 3, 4]))
-    }
+
+// home route
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html', {
+        title: 'articles',
+        articles: articles
+    });
 });
-server.on('connection', (socket) => {
-    console.log('new connection...');
-})
-server.listen(3000);
-console.log('listening on port 3000...');
+
+// add route
+// app.get('/articles/add', function(req, res) {
+//     res.render('add_article', {
+//         title: 'add article'
+//     });
+// })
+
+// start server
+app.listen(3000, function() {
+    console.log('server started on port 3k...');
+});
