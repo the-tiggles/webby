@@ -582,8 +582,8 @@ $(document).ready(function() {
   
     NEWS = {
       init: function() {
-        this.fetchNews2();
-        this.shuffleNews();
+        // this.fetchNews2();
+        // this.shuffleNews();
       },
       fetchNews: function() {
         var data = {};
@@ -689,8 +689,6 @@ $(document).ready(function() {
           $('#reddit-login').removeClass('hidden');
         }, 500)
       }
-
-      
     };
   
     // ================================
