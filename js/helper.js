@@ -430,7 +430,7 @@ $(document).ready(function() {
         })
       },
       animeShowAllEpisodes: function() {
-
+        
       }
     }
     
