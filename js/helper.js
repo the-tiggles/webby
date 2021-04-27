@@ -190,7 +190,7 @@ $(document).ready(function() {
         this.animeListAddAnime();
         this.animeListLoadCookies();
         this.animeListClearAll(); 
-        this.animeShowAllEpisodes();
+        // this.animeShowAllEpisodes();
       },
       animeListAddBtn: function() {
         $(document).on('click', '.add-to-list .add-more', function() {
@@ -431,7 +431,8 @@ $(document).ready(function() {
       },
       animeShowAllEpisodes: function() {
         $('section#main').on('click', '#anime-list li[class]', function() {
-          console.log('it has been clicked');
+          const animeID = $(this).attr('class');
+          console.log(animeID);
         })
       }
     }
