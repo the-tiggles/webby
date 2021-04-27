@@ -430,7 +430,9 @@ $(document).ready(function() {
         })
       },
       animeShowAllEpisodes: function() {
-        
+        $('#anime-list .home-list').on('click', 'li[class]', function() {
+          console.log('it has been clicked');
+        })
       }
     }
     
