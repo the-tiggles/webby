@@ -430,8 +430,6 @@ $(document).ready(function() {
         })
       },
       animeShowAllEpisodes: function() {
-        
-        
         $('section#main').on('click', '#anime-list li[class]', function() {
           const clickedAnimeID = $(this).attr('class');
           // Here we define our query as a multi-line string
@@ -444,23 +442,19 @@ $(document).ready(function() {
               updatedAt
               siteUrl
               trailer {
-                id
                 site
                 thumbnail
               }
               genres
               tags {
-                id
                 name
                 description
               }
               averageScore
               externalLinks {
-                id
                 url
                 site
               }
-              modNotes
               title {
                 english
                 romaji
@@ -517,15 +511,23 @@ $(document).ready(function() {
           function populateModal(data) {
             var theAnime = data.data;
             var allEpisodes = data.data.Media.streamingEpisodes;
+            var allTags = data.data.Media.tags;
+            var allLinks = data.data.Media.externalLinks;
+            var allGenres = data.data.Media.genres;
 
             console.log(theAnime);
+
+
             // populate things
-            $('#anime-modal .a-bg').css('background-image', 'url("'+ theAnime.Media.bannerImage +'")');
-            $('#anime-modal .a-name').text(theAnime.Media.title.english);
+            $('#anime-modal .a-banner-img').css('background-image', 'url("'+ theAnime.Media.bannerImage +'")');
+            $('#anime-modal .a-cover-img').css('background-image', 'url("'+ theAnime.Media.coverImage +'")');
+            $('#anime-modal .a-title').text(theAnime.Media.title.english);
+            $('#anime-modal .a-title-romaji').text(theAnime.Media.title.romaji);
             $('#anime-modal .a-description').html(theAnime.Media.description);
 
+
+            // episodes
             for (i = 0; i < allEpisodes.length; i++) {
-              // console.log(allEpisodes[i].title)
               $(`<li>
                   <div class="image-side" style="background-image:url('${allEpisodes[i].thumbnail}')"></div>
                   <div class="copy-side">
@@ -537,8 +539,22 @@ $(document).ready(function() {
                       </ul>
                     </div>
                   </div>
-                </li>`).prependTo($('ul#a-modal-list'));
+                </li>`).appendTo($('ul#a-modal-list'));
               
+            }
+            // external links
+            for (i = 0; i < allLinks.length; i++) {
+              $(`<li>
+                  <a href="${allLinks[i].url}" target="_blank" title="${allLinks[i].site}">${allLinks[i].site}</a>
+                </li>`).appendTo($('#section-links ul'))
+            }
+            // tags
+            for (i = 0; i < allTags.length; i++) {
+              $(`<li data-attr="${allTags[i].description}">${allTags[i].name}</li>`).appendTo($('#section-tags ul'));
+            }
+            // genres
+            for (i = 0; i < allGenres.length; i++) {
+              $(`<li>${allGenres[i]}</li>`).appendTo($('#section-genres ul'));
             }
             $('#anime-modal').addClass('active');
           }
