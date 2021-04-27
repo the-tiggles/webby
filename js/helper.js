@@ -20,12 +20,15 @@ $(document).ready(function() {
         HOME = HOME || {},
         WEATHER = WEATHER || {},
         NEWS = NEWS || {},
+        REDDIT = REDDIT || {},
+        ANIME = ANIME || {},
         DEFAULT = DEFAULT || {},
         SITEMAP = SITEMAP || {},
         PAGE_404 = PAGE_404 || {};
   
     var isHome = $('body.home').length,
         isDefault = $('body.default').length,
+        isReddit = $('body.reddit').length,
         isSitemap = $('div.sitemap').length,
         is404 = $('body > form.http-404').length;
   
@@ -46,7 +49,8 @@ $(document).ready(function() {
         NEWS.init();
         
         // Initialize Page Template Objects
-        if (isHome) { HOME.init(); }
+        if (isHome) { HOME.init(); ANIME.init(); }
+        if (isReddit) {REDDIT.init();}
         if (isDefault) { DEFAULT.init(); }
         if (isSitemap) { SITEMAP.init(); }
         if (is404) { PAGE_404.init(); }
@@ -150,12 +154,7 @@ $(document).ready(function() {
           this.classChanges();
           this.transitionContent();
           this.homeMain();
-          this.loadHomeUtility();
-          this.animeListAddBtn();
-          this.animeListSearch();
-          this.animeListAddAnime();
-          this.animeListLoadCookies();
-          this.animeListClearAll(); 
+          this.loadHomeUtility(); 
       },
       classChanges: function() {
         $('body').attr('class', 'home');
@@ -177,6 +176,21 @@ $(document).ready(function() {
       },
       loadHomeUtility: function() {
         $('#utility-bar').load('includes/utility-home.html');
+      }
+    };
+
+    // ================================
+    // Anime
+    // ================================
+
+    ANIME = {
+      init: function() {
+        this.animeListAddBtn();
+        this.animeListSearch();
+        this.animeListAddAnime();
+        this.animeListLoadCookies();
+        this.animeListClearAll(); 
+        this.animeShowAllEpisodes();
       },
       animeListAddBtn: function() {
         $(document).on('click', '.add-to-list .add-more', function() {
@@ -414,9 +428,12 @@ $(document).ready(function() {
           Cookies.remove('AnimeList');
           $('#anime-list .home-list > li:not(:first-child)').remove();
         })
-      }
+      },
+      animeShowAllEpisodes: function() {
 
-    };
+      }
+    }
+    
 
      // ================================
     // Weather 
