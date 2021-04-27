@@ -430,10 +430,129 @@ $(document).ready(function() {
         })
       },
       animeShowAllEpisodes: function() {
+        
+        
         $('section#main').on('click', '#anime-list li[class]', function() {
-          const animeID = $(this).attr('class');
-          console.log(animeID);
-        })
+          const clickedAnimeID = $(this).attr('class');
+          // Here we define our query as a multi-line string
+          // Storing it in a separate .graphql/.gql file is also possible
+          var query = `
+          query ($id: Int) { 
+            Media (id: $id, type: ANIME) {
+              id
+              description
+              updatedAt
+              siteUrl
+              trailer {
+                id
+                site
+                thumbnail
+              }
+              genres
+              tags {
+                id
+                name
+                description
+              }
+              averageScore
+              externalLinks {
+                id
+                url
+                site
+              }
+              modNotes
+              title {
+                english
+                romaji
+              }
+              coverImage {
+                extraLarge
+              }
+              bannerImage
+              nextAiringEpisode {
+                airingAt
+                timeUntilAiring
+                episode
+              }
+              streamingEpisodes {
+                title
+                thumbnail
+                url
+                site
+              }
+            }
+          }
+          `;
+
+          // Define our query variables and values that will be used in the query request
+          var variables = {
+              id: clickedAnimeID
+          };
+
+          // Define the config we'll need for our Api request
+          var url = 'https://graphql.anilist.co',
+              options = {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'Accept': 'application/json',
+                  },
+                  body: JSON.stringify({
+                      query: query,
+                      variables: variables
+                  })
+              };
+
+          // Make the HTTP Api request
+          fetch(url, options).then(handleResponse)
+                            .then(populateModal)
+                            .catch(handleError);
+
+          function handleResponse(response) {
+              return response.json().then(function (json) {
+                  return response.ok ? json : Promise.reject(json);
+              });
+          }
+
+          function populateModal(data) {
+            var theAnime = data.data;
+            var allEpisodes = data.data.Media.streamingEpisodes;
+
+            console.log(theAnime);
+            // populate things
+            $('#anime-modal .a-bg').css('background-image', 'url("'+ theAnime.Media.bannerImage +'")');
+            $('#anime-modal .a-name').text(theAnime.Media.title.english);
+            $('#anime-modal .a-description').html(theAnime.Media.description);
+
+            for (i = 0; i < allEpisodes.length; i++) {
+              // console.log(allEpisodes[i].title)
+              $(`<li>
+                  <div class="image-side" style="background-image:url('${allEpisodes[i].thumbnail}')"></div>
+                  <div class="copy-side">
+                    <div class="inner-wrapper">
+                      <h4>${allEpisodes[i].title}</h4>
+                      <p>Streaming:</p>
+                      <ul class="services-list">
+                        <li><a href="${allEpisodes[i].url}">${allEpisodes[i].site}</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>`).prependTo($('ul#a-modal-list'));
+              
+            }
+            $('#anime-modal').addClass('active');
+          }
+
+          function handleError(error) {
+              alert('Error, check console');
+              console.error(error);
+          }
+
+        }) // end of our animeShowAllEpisodes click
+
+
+
+
       }
     }
     
