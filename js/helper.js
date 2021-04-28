@@ -591,7 +591,7 @@ $(document).ready(function() {
           }
 
           function populateModal(data) {
-            var theAnime = data.data;
+            var theAnime = data.data.Media;
             var allEpisodes = data.data.Media.streamingEpisodes;
             var allTags = data.data.Media.tags;
             var allLinks = data.data.Media.externalLinks;
@@ -601,12 +601,12 @@ $(document).ready(function() {
 
 
             // populate things
-            $('#anime-modal .a-banner-img').css('background-image', 'url("'+ theAnime.Media.bannerImage +'")');
-            $('#anime-modal .a-cover-img').css('background-image', 'url("'+ theAnime.Media.coverImage.extraLarge +'")');
-            $('#anime-modal .a-user-score').text(theAnime.Media.averageScore);
-            $('#anime-modal .a-title').text(theAnime.Media.title.english);
-            $('#anime-modal .a-title-romaji').text(theAnime.Media.title.romaji);
-            $('#anime-modal .a-description').html(theAnime.Media.description);
+            $('#anime-modal .a-banner-img').css('background-image', 'url("'+ theAnime.bannerImage +'")');
+            $('#anime-modal .a-cover-img').css('background-image', 'url("'+ theAnime.coverImage.extraLarge +'")');
+            $('#anime-modal .a-user-score').text(theAnime.averageScore);
+            $('#anime-modal .a-title').text(theAnime.title.english);
+            $('#anime-modal .a-title-romaji').text(theAnime.title.romaji);
+            $('#anime-modal .a-description').html(theAnime.description);
             $(`<li>
                 <div class="embed-container">
                   <iframe src="https://www.youtube.com/embed/${theAnime.trailer.id}" allowfullscreen"></iframe>
