@@ -190,7 +190,7 @@ $(document).ready(function() {
         this.animeListAddAnime();
         this.animeListLoadCookies();
         this.animeListClearAll(); 
-        this.animeShowAllEpisodes();
+        this.animeModal();
       },
       animeListAddBtn: function() {
         $(document).on('click', '.add-to-list .add-more', function() {
@@ -429,10 +429,7 @@ $(document).ready(function() {
           $('#anime-list .home-list > li:not(:first-child)').remove();
         })
       },
-      animeShowAllEpisodes: function() {
-
-
-
+      animeModal: function() {
         $('section#main').on('click', '#anime-list li[class]', function() {
           const clickedAnimeID = $(this).attr('class');
           // Here we define our query as a multi-line string
@@ -456,6 +453,36 @@ $(document).ready(function() {
                     status(version:2)
                     bannerImage
                     coverImage{
+                      large
+                    }
+                  }
+                }
+              }
+              recommendations(perPage:7,sort:[RATING_DESC,ID]){
+                pageInfo{
+                  total
+                }
+                nodes{
+                  id 
+                  rating 
+                  userRating 
+                  mediaRecommendation{
+                    id 
+                    title{
+                      userPreferred
+                    }
+                    format 
+                    type 
+                    status(version:2)
+                    bannerImage 
+                    coverImage{
+                      large
+                    }
+                  }
+                  user {
+                    id 
+                    name 
+                    avatar{
                       large
                     }
                   }
@@ -530,18 +557,18 @@ $(document).ready(function() {
           };
 
           // Define the config we'll need for our Api request
-          var url = 'https://graphql.anilist.co',
-              options = {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                      'Accept': 'application/json',
-                  },
-                  body: JSON.stringify({
-                      query: query,
-                      variables: variables
-                  })
-              };
+          var url = 'https://graphql.anilist.co';
+          var options = {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json',
+              },
+              body: JSON.stringify({
+                  query: query,
+                  variables: variables
+              })
+          };
 
           // Make the HTTP Api request
           fetch(url, options).then(handleResponse)
@@ -585,7 +612,7 @@ $(document).ready(function() {
                       </ul>
                     </div>
                   </div>
-                </li>`).appendTo($('ul#a-modal-list'));
+                </li>`).appendTo($('ul#a-episode-list'));
             }
             // external links
             for (i = 0; i < allLinks.length; i++) {
@@ -609,10 +636,20 @@ $(document).ready(function() {
               console.error(error);
           }
 
+          function closeModal() {
+            $('#anime-modal').removeClass('active');
+            // unpopulate things
+            setTimeout(function() {
+              $('#anime-modal .a-banner-img').css('background-image', '');
+              $('#anime-modal .a-cover-img').css('background-image', '');
+              $('#anime-modal .a-user-score').empty();
+              $('#anime-modal .a-title').empty();
+              $('#anime-modal .a-title-romaji').empty();
+              $('#anime-modal .a-description').html().empty();
+            }, 500)
+          }
+
         }) // end of our animeShowAllEpisodes click
-
-
-
 
       }
     }
