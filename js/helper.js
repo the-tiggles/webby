@@ -554,7 +554,6 @@ $(document).ready(function() {
                 thumbnail
                 url
                 site
-                
               }
             }
           }
