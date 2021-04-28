@@ -449,15 +449,23 @@ $(document).ready(function() {
                 description
                 updatedAt
                 siteUrl
-                status
-                relations {
-                  adaptation
-                  prequel
-                  sequel
-                  parent
-                  side_story
-                  character
-                  spin_off
+                status(version:2)
+                relations{
+                  edges{
+                    id 
+                    relationType(version:2)
+                    node{
+                      id 
+                      title{userPreferred}
+                      format 
+                      type 
+                      status(version:2)
+                      bannerImage
+                      coverImage{
+                        large
+                      }
+                    }
+                  }
                 }
                 reviews {
                   id
