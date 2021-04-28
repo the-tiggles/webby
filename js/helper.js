@@ -436,66 +436,76 @@ $(document).ready(function() {
           // Storing it in a separate .graphql/.gql file is also possible
           var query = `
           query ($id: Int) { 
-            Media (id: $id, type: ANIME) {
-              id
-              description
-              updatedAt
-              siteUrl
-              status
-              relations {
-                adaptation
-                prequel
-                sequel
-                parent
-                side_story
-                character
-                spin_off
+            Page (page: $page, perPage: $perPage) {
+              pageInfo {
+                total
+                currentPage
+                lastPage
+                hasNextPage
+                perPage
               }
-              reviews {
+              Media (id: $id, type: ANIME) {
                 id
-                body
-                rating
-                ratingAmount
-                userRating
-                createdAt
-                user
-                summary
-              }
-              trailer {
-                site
-                thumbnail
-                id
-              }
-              genres
-              tags {
-                name
                 description
-              }
-              averageScore
-              externalLinks {
-                url
-                site
-              }
-              title {
-                english
-                romaji
-              }
-              coverImage {
-                extraLarge
-              }
-              bannerImage
-              nextAiringEpisode {
-                airingAt
-                timeUntilAiring
-                episode
-              }
-              streamingEpisodes {
-                title
-                thumbnail
-                url
-                site
+                updatedAt
+                siteUrl
+                status
+                relations {
+                  adaptation
+                  prequel
+                  sequel
+                  parent
+                  side_story
+                  character
+                  spin_off
+                }
+                reviews {
+                  id
+                  body
+                  rating
+                  ratingAmount
+                  userRating
+                  createdAt
+                  user
+                  summary
+                }
+                trailer {
+                  site
+                  thumbnail
+                  id
+                }
+                genres
+                tags {
+                  name
+                  description
+                }
+                averageScore
+                externalLinks {
+                  url
+                  site
+                }
+                title {
+                  english
+                  romaji
+                }
+                coverImage {
+                  extraLarge
+                }
+                bannerImage
+                nextAiringEpisode {
+                  airingAt
+                  timeUntilAiring
+                  episode
+                }
+                streamingEpisodes {
+                  title
+                  thumbnail
+                  url
+                  site
+                }
               }
             }
+            
           }
           `;
 
