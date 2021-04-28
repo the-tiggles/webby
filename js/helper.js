@@ -507,6 +507,8 @@ $(document).ready(function() {
                 }
                 nodes{
                   id 
+                  updatedAt
+                  body
                   summary 
                   rating 
                   ratingAmount 
@@ -616,6 +618,8 @@ $(document).ready(function() {
                 </li>      
               `).appendTo($('#anime-modal ul#a-trailer-list'));
             }
+
+
             
 
 
@@ -662,6 +666,12 @@ $(document).ready(function() {
 
         $('section#main').on('click', '#close-modal', function() {
           closeModal();
+        });
+        $('section#main').on('click', ".content-switcher span:not(.active)", function() {
+          var tabName = $(this).attr('data-id');
+          $('.modal-inner .main-copy > ul.active, #anime-modal .content-switcher span.active').removeClass('active');
+          $('.modal-inner .main-copy > ul[id="'+tabName+'"]').addClass('active');
+          $(this).addClass('active');
         })
 
       }
