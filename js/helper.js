@@ -435,7 +435,7 @@ $(document).ready(function() {
           // Here we define our query as a multi-line string
           // Storing it in a separate .graphql/.gql file is also possible
           var query = `
-          query ($id: Int) { 
+          query ($id: Int, $page: Int, $perPage: Int) { 
             Page (page: $page, perPage: $perPage) {
               pageInfo {
                 total
