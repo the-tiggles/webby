@@ -598,6 +598,12 @@ $(document).ready(function() {
             $('#anime-modal .a-title').text(theAnime.Media.title.english);
             $('#anime-modal .a-title-romaji').text(theAnime.Media.title.romaji);
             $('#anime-modal .a-description').html(theAnime.Media.description);
+            $(`<li>
+                <div class="embed-container">
+                  <iframe src="https://www.youtube.com/embed/${theAnime.trailer.id}" allowfullscreen"></iframe>
+                </div>
+              </li>      
+            `).appendTo($('#anime-modal ul#a-trailer-list'));
 
 
             // episodes
@@ -624,6 +630,7 @@ $(document).ready(function() {
             for (i = 0; i < allTags.length; i++) {
               $(`<li data-attr="${allTags[i].description}">${allTags[i].name}</li>`).appendTo($('#section-tags ul'));
             }
+            
             // genres
             for (i = 0; i < allGenres.length; i++) {
               $(`<li>${allGenres[i]}</li>`).appendTo($('#section-genres ul'));
@@ -640,12 +647,8 @@ $(document).ready(function() {
             $('#anime-modal').removeClass('active');
             // unpopulate things
             setTimeout(function() {
-              $('#anime-modal .a-banner-img').css('background-image', '');
-              $('#anime-modal .a-cover-img').css('background-image', '');
-              $('#anime-modal .a-user-score').empty();
-              $('#anime-modal .a-title').empty();
-              $('#anime-modal .a-title-romaji').empty();
-              $('#anime-modal .a-description').html().empty();
+              $('#anime-modal .a-banner-img, #anime-modal .a-cover-img').css('background-image', '');
+              $('#anime-modal .a-user-score, #anime-modal .a-title, #anime-modal .a-title-romaji, #anime-modal .a-description, #anime-modal .main-copy > ul').empty();
             }, 500)
           }
 
