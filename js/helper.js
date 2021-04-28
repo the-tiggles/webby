@@ -467,15 +467,27 @@ $(document).ready(function() {
                     }
                   }
                 }
-                reviews {
-                  id
-                  body
-                  rating
-                  ratingAmount
-                  userRating
-                  createdAt
-                  user
-                  summary
+                reviews(page:$page,sort:[RATING_DESC,ID]){
+                  pageInfo{
+                    total 
+                    perPage 
+                    currentPage 
+                    lastPage 
+                    hasNextPage
+                  }
+                  nodes{
+                    id 
+                    summary 
+                    rating 
+                    ratingAmount 
+                    user{
+                      id 
+                      name 
+                      avatar{
+                        large
+                      }
+                    }
+                  }
                 }
                 trailer {
                   site
