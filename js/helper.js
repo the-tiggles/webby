@@ -451,7 +451,16 @@ $(document).ready(function() {
                 character
                 spin_off
               }
-              reviews
+              reviews {
+                id
+                body
+                rating
+                ratingAmount
+                userRating
+                createdAt
+                user
+                summary
+              }
               trailer {
                 site
                 thumbnail
