@@ -521,6 +521,7 @@ $(document).ready(function() {
             // populate things
             $('#anime-modal .a-banner-img').css('background-image', 'url("'+ theAnime.Media.bannerImage +'")');
             $('#anime-modal .a-cover-img').css('background-image', 'url("'+ theAnime.Media.coverImage +'")');
+            $('#anime-modal .a-user-score').text(theAnime.Media.averageScore);
             $('#anime-modal .a-title').text(theAnime.Media.title.english);
             $('#anime-modal .a-title-romaji').text(theAnime.Media.title.romaji);
             $('#anime-modal .a-description').html(theAnime.Media.description);
