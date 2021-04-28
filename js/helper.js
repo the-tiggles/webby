@@ -511,7 +511,9 @@ $(document).ready(function() {
 
           // Define our query variables and values that will be used in the query request
           var variables = {
-              id: clickedAnimeID
+              id: clickedAnimeID,
+              page: 1,
+              perPage: 15
           };
 
           // Define the config we'll need for our Api request
