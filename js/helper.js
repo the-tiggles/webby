@@ -524,8 +524,7 @@ $(document).ready(function() {
                   site
                 }
               }
-            }
-            
+            } 
           }
           `;
 
@@ -562,11 +561,11 @@ $(document).ready(function() {
           }
 
           function populateModal(data) {
-            var theAnime = data.data;
-            var allEpisodes = data.data.Media.streamingEpisodes;
-            var allTags = data.data.Media.tags;
-            var allLinks = data.data.Media.externalLinks;
-            var allGenres = data.data.Media.genres;
+            var theAnime = data.data.Page;
+            var allEpisodes = data.data.Page.Media.streamingEpisodes;
+            var allTags = data.data.Page.Media.tags;
+            var allLinks = data.data.Page.Media.externalLinks;
+            var allGenres = data.data.Page.Media.genres;
 
             console.log(theAnime);
 
