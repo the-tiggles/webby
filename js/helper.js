@@ -441,9 +441,13 @@ $(document).ready(function() {
               description
               updatedAt
               siteUrl
+              status
+              relations
+              reviews
               trailer {
                 site
                 thumbnail
+                id
               }
               genres
               tags {
