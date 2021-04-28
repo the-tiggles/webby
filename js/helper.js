@@ -608,7 +608,7 @@ $(document).ready(function() {
             $('#anime-modal .a-title-romaji').text(theAnime.title.romaji);
             $('#anime-modal .a-description').html(theAnime.description);
 
-            if (theAnime.trailer.id.length) {
+            if (theAnime.trailer != null) {
                 $(`<li>
                   <div class="embed-container">
                     <iframe src="https://www.youtube.com/embed/${theAnime.trailer.id}" allowfullscreen"></iframe>
