@@ -607,12 +607,16 @@ $(document).ready(function() {
             $('#anime-modal .a-title').text(theAnime.title.english);
             $('#anime-modal .a-title-romaji').text(theAnime.title.romaji);
             $('#anime-modal .a-description').html(theAnime.description);
-            $(`<li>
-                <div class="embed-container">
-                  <iframe src="https://www.youtube.com/embed/${theAnime.trailer.id}" allowfullscreen"></iframe>
-                </div>
-              </li>      
-            `).appendTo($('#anime-modal ul#a-trailer-list'));
+
+            if (theAnime.trailer.id.length) {
+                $(`<li>
+                  <div class="embed-container">
+                    <iframe src="https://www.youtube.com/embed/${theAnime.trailer.id}" allowfullscreen"></iframe>
+                  </div>
+                </li>      
+              `).appendTo($('#anime-modal ul#a-trailer-list'));
+            }
+            
 
 
             // episodes
