@@ -190,7 +190,7 @@ $(document).ready(function() {
         this.animeListAddAnime();
         this.animeListLoadCookies();
         this.animeListClearAll(); 
-        // this.animeShowAllEpisodes();
+        this.animeShowAllEpisodes();
       },
       animeListAddBtn: function() {
         $(document).on('click', '.add-to-list .add-more', function() {
@@ -430,101 +430,95 @@ $(document).ready(function() {
         })
       },
       animeShowAllEpisodes: function() {
+
+
+
         $('section#main').on('click', '#anime-list li[class]', function() {
           const clickedAnimeID = $(this).attr('class');
           // Here we define our query as a multi-line string
-          // Storing it in a separate .graphql/.gql file is also possible
           var query = `
           query ($id: Int, $page: Int, $perPage: Int) { 
-            Page (page: $page, perPage: $perPage) {
-              pageInfo {
-                total
-                currentPage
-                lastPage
-                hasNextPage
-                perPage
+            Media (id: $id, type: ANIME) {
+              id
+              description
+              updatedAt
+              siteUrl
+              status(version:2)
+              relations{
+                edges{
+                  id 
+                  relationType(version:2)
+                  node{
+                    id 
+                    title{userPreferred}
+                    format 
+                    type 
+                    status(version:2)
+                    bannerImage
+                    coverImage{
+                      large
+                    }
+                  }
+                }
               }
-              media (id: $id, type: ANIME) {
+              reviews(page:$page, perPage: $perPage, sort:[RATING_DESC,ID]){
+                pageInfo{
+                  total 
+                  perPage 
+                  currentPage 
+                  lastPage 
+                  hasNextPage
+                }
+                nodes{
+                  id 
+                  summary 
+                  rating 
+                  ratingAmount 
+                  user{
+                    id 
+                    name 
+                    avatar{
+                      large
+                    }
+                  }
+                }
+              }
+              trailer {
+                site
+                thumbnail
                 id
-                description
-                updatedAt
-                siteUrl
-                status(version:2)
-                relations{
-                  edges{
-                    id 
-                    relationType(version:2)
-                    node{
-                      id 
-                      title{userPreferred}
-                      format 
-                      type 
-                      status(version:2)
-                      bannerImage
-                      coverImage{
-                        large
-                      }
-                    }
-                  }
-                }
-                reviews(page:$page,sort:[RATING_DESC,ID]){
-                  pageInfo{
-                    total 
-                    perPage 
-                    currentPage 
-                    lastPage 
-                    hasNextPage
-                  }
-                  nodes{
-                    id 
-                    summary 
-                    rating 
-                    ratingAmount 
-                    user{
-                      id 
-                      name 
-                      avatar{
-                        large
-                      }
-                    }
-                  }
-                }
-                trailer {
-                  site
-                  thumbnail
-                  id
-                }
-                genres
-                tags {
-                  name
-                  description
-                }
-                averageScore
-                externalLinks {
-                  url
-                  site
-                }
-                title {
-                  english
-                  romaji
-                }
-                coverImage {
-                  extraLarge
-                }
-                bannerImage
-                nextAiringEpisode {
-                  airingAt
-                  timeUntilAiring
-                  episode
-                }
-                streamingEpisodes {
-                  title
-                  thumbnail
-                  url
-                  site
-                }
               }
-            } 
+              genres
+              tags {
+                name
+                description
+              }
+              averageScore
+              externalLinks {
+                url
+                site
+              }
+              title {
+                english
+                romaji
+              }
+              coverImage {
+                extraLarge
+              }
+              bannerImage
+              nextAiringEpisode {
+                airingAt
+                timeUntilAiring
+                episode
+              }
+              streamingEpisodes{
+                title
+                thumbnail
+                url
+                site
+                
+              }
+            }
           }
           `;
 
@@ -561,11 +555,11 @@ $(document).ready(function() {
           }
 
           function populateModal(data) {
-            var theAnime = data.data.Page;
-            var allEpisodes = data.data.Page.Media.streamingEpisodes;
-            var allTags = data.data.Page.Media.tags;
-            var allLinks = data.data.Page.Media.externalLinks;
-            var allGenres = data.data.Page.Media.genres;
+            var theAnime = data.data;
+            var allEpisodes = data.data.Media.streamingEpisodes;
+            var allTags = data.data.Media.tags;
+            var allLinks = data.data.Media.externalLinks;
+            var allGenres = data.data.Media.genres;
 
             console.log(theAnime);
 
@@ -593,7 +587,6 @@ $(document).ready(function() {
                     </div>
                   </div>
                 </li>`).appendTo($('ul#a-modal-list'));
-              
             }
             // external links
             for (i = 0; i < allLinks.length; i++) {
