@@ -580,7 +580,6 @@ $(document).ready(function() {
                   <div class="copy-side">
                     <div class="inner-wrapper">
                       <h4>${allEpisodes[i].title}</h4>
-                      <p>Streaming:</p>
                       <ul class="services-list">
                         <li><a href="${allEpisodes[i].url}">${allEpisodes[i].site}</a></li>
                       </ul>
