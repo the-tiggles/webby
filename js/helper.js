@@ -444,7 +444,7 @@ $(document).ready(function() {
                 hasNextPage
                 perPage
               }
-              Media (id: $id, type: ANIME) {
+              media (id: $id, type: ANIME) {
                 id
                 description
                 updatedAt
