@@ -507,11 +507,14 @@ $(document).ready(function() {
                 }
                 nodes{
                   id 
+                  createdAt
                   updatedAt
                   body
                   summary 
                   rating 
                   ratingAmount 
+                  score
+                  userRating
                   user{
                     id 
                     name 
