@@ -442,7 +442,15 @@ $(document).ready(function() {
               updatedAt
               siteUrl
               status
-              relations
+              relations {
+                adaptation
+                prequel
+                sequel
+                parent
+                side_story
+                character
+                spin_off
+              }
               reviews
               trailer {
                 site
