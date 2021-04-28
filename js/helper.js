@@ -190,7 +190,7 @@ $(document).ready(function() {
         this.animeListAddAnime();
         this.animeListLoadCookies();
         this.animeListClearAll(); 
-        this.animeShowAllEpisodes();
+        // this.animeShowAllEpisodes();
       },
       animeListAddBtn: function() {
         $(document).on('click', '.add-to-list .add-more', function() {
