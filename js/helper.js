@@ -430,6 +430,15 @@ $(document).ready(function() {
         })
       },
       animeModal: function() {
+
+        function closeModal() {
+          $('#anime-modal').removeClass('active');
+          // unpopulate things
+          setTimeout(function() {
+            $('#anime-modal .a-banner-img, #anime-modal .a-cover-img').css('background-image', '');
+            $('#anime-modal .a-user-score, #anime-modal .a-title, #anime-modal .a-title-romaji, #anime-modal .a-description, #anime-modal .main-copy > ul').empty();
+          }, 500)
+        }
         $('section#main').on('click', '#anime-list li[class]', function() {
           const clickedAnimeID = $(this).attr('class');
           // Here we define our query as a multi-line string
@@ -643,16 +652,13 @@ $(document).ready(function() {
               console.error(error);
           }
 
-          function closeModal() {
-            $('#anime-modal').removeClass('active');
-            // unpopulate things
-            setTimeout(function() {
-              $('#anime-modal .a-banner-img, #anime-modal .a-cover-img').css('background-image', '');
-              $('#anime-modal .a-user-score, #anime-modal .a-title, #anime-modal .a-title-romaji, #anime-modal .a-description, #anime-modal .main-copy > ul').empty();
-            }, 500)
-          }
+          
 
         }) // end of our animeShowAllEpisodes click
+
+        $('section#main').on('click', '#close-modal', function() {
+          closeModal();
+        })
 
       }
     }
