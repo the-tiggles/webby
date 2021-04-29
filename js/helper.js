@@ -589,10 +589,11 @@ $(document).ready(function() {
 
           function populateModal(data) {
             var theAnime = data.data.Media;
-            var allEpisodes = data.data.Media.streamingEpisodes;
-            var allTags = data.data.Media.tags;
-            var allLinks = data.data.Media.externalLinks;
-            var allGenres = data.data.Media.genres;
+            var allEpisodes = theAnime.streamingEpisodes;
+            var allTags = theAnime.tags;
+            var allLinks = theAnime.externalLinks;
+            var allGenres = theAnime.genres;
+            var allReviews = theAnime.reviews;
 
             console.log(theAnime);
 
@@ -613,9 +614,6 @@ $(document).ready(function() {
                 </li>      
               `).appendTo($('#anime-modal ul#a-trailer-list'));
             }
-
-
-            
 
              // genres
              for (i = 0; i < allGenres.length; i++) {
@@ -656,6 +654,14 @@ $(document).ready(function() {
                     </div>
                   </div>
                 </li>`).appendTo($('ul#a-episode-list'));
+            }
+
+            // reviews
+            if (allReviews != null) {
+              for (i = 0; i< allReviews.nodes.length; i++) {
+                var review = allReviews.nodes[i];
+                console.log(review);
+              }
             }
             
             
@@ -700,7 +706,7 @@ $(document).ready(function() {
     }
     
 
-     // ================================
+    // ================================
     // Weather 
     // ================================
   
