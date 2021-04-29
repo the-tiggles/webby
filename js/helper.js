@@ -644,13 +644,13 @@ $(document).ready(function() {
             }
             // Unofficial Links
             $(`<li>
-                  <a class="link-4anime" href="//4anime.to/?s=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
+                  <a class="link-4anime" href="//4anime.to/?s=` + theAnime.title.romaji.replace(' ', '+') + `" target="_blank"></a>
                 </li>
                 <li>
-                  <a class="link-animedao" href="//4animedao.to/search/?search=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
+                  <a class="link-animedao" href="//animedao.to/search/?search=` + theAnime.title.romaji.replace(' ', '+') + `" target="_blank"></a>
                 </li>
                 <li>
-                  <a class="link-animekisa" href="//animekisa.tv/search?q=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
+                  <a class="link-animekisa" href="//animekisa.tv/search?q=` + theAnime.title.romaji.replace(' ', '+') + `" target="_blank"></a>
                 </li>
             `).appendTo('#section-ulinks ul');
             
