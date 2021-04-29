@@ -270,11 +270,11 @@
       "oAP" : "\/css\/helpers\/.ds_store",
       "oF" : 0
     },
-    "\/css\/images\/android-chrome-192x192.png" : {
+    "\/css\/images\/favicon\/android-chrome-192x192.png" : {
       "ft" : 32768,
       "iS" : 7005,
       "oA" : 0,
-      "oAP" : "\/css\/images\/android-chrome-192x192.png",
+      "oAP" : "\/css\/images\/favicon\/android-chrome-192x192.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -283,11 +283,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-57x57.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-57x57.png" : {
       "ft" : 32768,
       "iS" : 1012,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-57x57.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-57x57.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -296,11 +296,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-60x60.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-60x60.png" : {
       "ft" : 32768,
       "iS" : 560,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-60x60.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-60x60.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -309,11 +309,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-72x72.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-72x72.png" : {
       "ft" : 32768,
       "iS" : 1072,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-72x72.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-72x72.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -322,11 +322,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-76x76.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-76x76.png" : {
       "ft" : 32768,
       "iS" : 1246,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-76x76.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-76x76.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -335,11 +335,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-114x114.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-114x114.png" : {
       "ft" : 32768,
       "iS" : 3700,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-114x114.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-114x114.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -348,11 +348,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-120x120.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-120x120.png" : {
       "ft" : 32768,
       "iS" : 1350,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-120x120.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-120x120.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -361,11 +361,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-144x144.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-144x144.png" : {
       "ft" : 32768,
       "iS" : 3777,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-144x144.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-144x144.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -374,11 +374,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-152x152.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-152x152.png" : {
       "ft" : 32768,
       "iS" : 4213,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-152x152.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-152x152.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -387,11 +387,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/apple-touch-icon-180x180.png" : {
+    "\/css\/images\/favicon\/apple-touch-icon-180x180.png" : {
       "ft" : 32768,
       "iS" : 2366,
       "oA" : 0,
-      "oAP" : "\/css\/images\/apple-touch-icon-180x180.png",
+      "oAP" : "\/css\/images\/favicon\/apple-touch-icon-180x180.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -400,12 +400,12 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/brand\/favi.jpg" : {
+    "\/css\/images\/favicon\/favi.jpg" : {
       "ft" : 16384,
       "iS" : 10487,
       "jF" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/images\/brand\/favi.jpg",
+      "oAP" : "\/css\/images\/favicon\/favi.jpg",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -413,11 +413,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/favicon-16x16.png" : {
+    "\/css\/images\/favicon\/favicon-16x16.png" : {
       "ft" : 32768,
       "iS" : 192,
       "oA" : 0,
-      "oAP" : "\/css\/images\/favicon-16x16.png",
+      "oAP" : "\/css\/images\/favicon\/favicon-16x16.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -426,11 +426,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/favicon-32x32.png" : {
+    "\/css\/images\/favicon\/favicon-32x32.png" : {
       "ft" : 32768,
       "iS" : 273,
       "oA" : 0,
-      "oAP" : "\/css\/images\/favicon-32x32.png",
+      "oAP" : "\/css\/images\/favicon\/favicon-32x32.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -439,11 +439,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/favicon-96x96.png" : {
+    "\/css\/images\/favicon\/favicon-96x96.png" : {
       "ft" : 32768,
       "iS" : 1989,
       "oA" : 0,
-      "oAP" : "\/css\/images\/favicon-96x96.png",
+      "oAP" : "\/css\/images\/favicon\/favicon-96x96.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -452,27 +452,27 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/favicon.ico" : {
+    "\/css\/images\/favicon\/favicon.ico" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/images\/favicon.ico",
+      "oAP" : "\/css\/images\/favicon\/favicon.ico",
       "oF" : 0
     },
-    "\/css\/images\/favis.zip" : {
+    "\/css\/images\/favicon\/favis.zip" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/css\/images\/favis.zip",
+      "oAP" : "\/css\/images\/favicon\/favis.zip",
       "oF" : 0
     },
-    "\/css\/images\/largetile.png" : {
+    "\/css\/images\/favicon\/largetile.png" : {
       "ft" : 32768,
       "iS" : 13093,
       "oA" : 0,
-      "oAP" : "\/css\/images\/largetile.png",
+      "oAP" : "\/css\/images\/favicon\/largetile.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -481,11 +481,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/mediumtile.png" : {
+    "\/css\/images\/favicon\/mediumtile.png" : {
       "ft" : 32768,
       "iS" : 1447,
       "oA" : 0,
-      "oAP" : "\/css\/images\/mediumtile.png",
+      "oAP" : "\/css\/images\/favicon\/mediumtile.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -494,11 +494,63 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/css\/images\/smalltile.png" : {
+    "\/css\/images\/favicon\/smalltile.png" : {
       "ft" : 32768,
       "iS" : 790,
       "oA" : 0,
-      "oAP" : "\/css\/images\/smalltile.png",
+      "oAP" : "\/css\/images\/favicon\/smalltile.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/css\/images\/favicon\/widetile.png" : {
+      "ft" : 32768,
+      "iS" : 2927,
+      "oA" : 0,
+      "oAP" : "\/css\/images\/favicon\/widetile.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/css\/images\/ui\/4anime.png" : {
+      "ft" : 32768,
+      "iS" : 1344,
+      "oA" : 0,
+      "oAP" : "\/css\/images\/ui\/4anime.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/css\/images\/ui\/animedao.png" : {
+      "ft" : 32768,
+      "iS" : 1001,
+      "oA" : 0,
+      "oAP" : "\/css\/images\/ui\/animedao.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/css\/images\/ui\/animekisa.png" : {
+      "ft" : 32768,
+      "iS" : 1070,
+      "oA" : 0,
+      "oAP" : "\/css\/images\/ui\/animekisa.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -593,19 +645,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/css\/images\/widetile.png" : {
-      "ft" : 32768,
-      "iS" : 2927,
-      "oA" : 0,
-      "oAP" : "\/css\/images\/widetile.png",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "oT" : 1,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
     "\/css\/master.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -649,6 +688,20 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/css\/pages\/_404.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/css\/pages\/_anime.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/css\/pages\/_anime.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -724,6 +777,14 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/includes\/part-home-main-output.html" : {
+      "cB" : 1,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/includes\/part-home-main-output-output.html",
+      "oF" : 0
+    },
     "\/includes\/part-home-main.html" : {
       "cB" : 1,
       "ft" : 8192,
@@ -764,6 +825,14 @@
       "oAP" : "\/includes\/utility-home-output.html",
       "oF" : 0
     },
+    "\/index-output.html" : {
+      "cB" : 1,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/index-output-output.html",
+      "oF" : 0
+    },
     "\/index.html" : {
       "cB" : 1,
       "ft" : 8192,
@@ -801,6 +870,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/js\/external\/shuffle-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/js\/helper-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/js\/helper-min-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -873,7 +953,7 @@
     "creationDate" : 641309146.30180299,
     "displayValue" : "webby",
     "displayValueWasSetByUser" : 0,
-    "iconImageName" : "\/css\/images\/apple-touch-icon-120x120.png",
+    "iconImageName" : "\/css\/images\/favicon\/apple-touch-icon-120x120.png",
     "iconImageWasSetByUser" : 0
   },
   "projectSettings" : {
