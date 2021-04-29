@@ -675,7 +675,7 @@ $(document).ready(function() {
                 var review = allReviews.nodes[i];
                 var updatedAt = review.updatedAt;
                 var s = JSON.stringify(updatedAt);
-                var d = JSON.parse(s);
+                var d = timeConverter(JSON.parse(s));
                 console.log(review.updatedAt);
                 $(`
                 <li>
@@ -686,7 +686,7 @@ $(document).ready(function() {
                   <div class="review-side">
                     <div class="inner-wrapper">
                       <div class="review-footer">
-                        <span class="r-updatedAt">` + d + `</span>
+                        <span class="r-updatedAt">${d}</span>
                       </div>
                     </div>
                   </div>
