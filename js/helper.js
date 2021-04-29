@@ -681,7 +681,7 @@ $(document).ready(function() {
                   <div class="review-side">
                     <div class="inner-wrapper">
                       <div class="review-footer">
-                        <span class="r-updatedAt">` + timeConverter($(allReviews.nodes[i].updatedAt)) +  `</span>
+                        <span class="r-updatedAt">${allReviews.nodes[i].updatedAt}</span>
                       </div>
                     </div>
                   </div>
@@ -699,6 +699,8 @@ $(document).ready(function() {
               alert('Error, check console');
               console.error(error);
           }
+
+
 
           
 
