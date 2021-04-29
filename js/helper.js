@@ -617,7 +617,26 @@ $(document).ready(function() {
 
             
 
-
+             // genres
+             for (i = 0; i < allGenres.length; i++) {
+              $(`<li>${allGenres[i]}</li>`).appendTo($('#section-genres ul'));
+            }
+            // Official links
+            for (i = 0; i < allLinks.length; i++) {
+              $(`<li>
+                  <a href="${allLinks[i].url}" target="_blank" title="${allLinks[i].site}">${allLinks[i].site}</a>
+                </li>`).appendTo($('#section-links ul'))
+            }
+            // tags
+            for (i = 0; i < allTags.length; i++) {
+              $(`<li data-attr="${allTags[i].description}">${allTags[i].name}</li>`).appendTo($('#section-tags ul'));
+            }
+            // Unofficial Links
+            // 4anime
+            $(`<li>
+                <a class="link-4anime" href="//4anime.to/?s=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
+                </li>
+            `).appendTo('#section-ulinks ul');
             // episodes
             for (i = 0; i < allEpisodes.length; i++) {
               $(`<li>
@@ -632,21 +651,9 @@ $(document).ready(function() {
                   </div>
                 </li>`).appendTo($('ul#a-episode-list'));
             }
-            // external links
-            for (i = 0; i < allLinks.length; i++) {
-              $(`<li>
-                  <a href="${allLinks[i].url}" target="_blank" title="${allLinks[i].site}">${allLinks[i].site}</a>
-                </li>`).appendTo($('#section-links ul'))
-            }
-            // tags
-            for (i = 0; i < allTags.length; i++) {
-              $(`<li data-attr="${allTags[i].description}">${allTags[i].name}</li>`).appendTo($('#section-tags ul'));
-            }
             
-            // genres
-            for (i = 0; i < allGenres.length; i++) {
-              $(`<li>${allGenres[i]}</li>`).appendTo($('#section-genres ul'));
-            }
+            
+           
             $('#anime-modal').addClass('active');
           }
 
