@@ -673,7 +673,7 @@ $(document).ready(function() {
             if (allReviews != null) {
               for (i = 0; i< allReviews.nodes.length; i++) {
                 var review = allReviews.nodes[i];
-                console.log(review);
+                console.log(review.updatedAt);
                 $(`
                 <li>
                   <div class="profile-side">
