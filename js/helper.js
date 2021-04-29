@@ -131,18 +131,7 @@ $(document).ready(function() {
         })
       },
       unixConverter: function() {
-        function timeConverter(UNIX_timestamp){
-          var a = new Date(UNIX_timestamp * 1000);
-          var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-          var year = a.getFullYear();
-          var month = months[a.getMonth()];
-          var date = a.getDate();
-          var hour = a.getHours();
-          var min = a.getMinutes();
-          var sec = a.getSeconds();
-          var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-          return time;
-        }
+       
       }
   
      
@@ -446,6 +435,19 @@ $(document).ready(function() {
       },
       animeModal: function() {
 
+        function timeConverter(UNIX_timestamp){
+          var a = new Date(UNIX_timestamp * 1000);
+          var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          var year = a.getFullYear();
+          var month = months[a.getMonth()];
+          var date = a.getDate();
+          var hour = a.getHours();
+          var min = a.getMinutes();
+          var sec = a.getSeconds();
+          var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+          return time;
+        }
+
         
         $('section#main').on('click', '#anime-list li[class]', function() {
           const clickedAnimeID = $(this).attr('class');
@@ -681,7 +683,7 @@ $(document).ready(function() {
                   <div class="review-side">
                     <div class="inner-wrapper">
                       <div class="review-footer">
-                        <span class="r-updatedAt">${allReviews.nodes[i].updatedAt}</span>
+                        <span class="r-updatedAt">` + timeConverter($(allReviews.nodes[i].updatedAt)) + `</span>
                       </div>
                     </div>
                   </div>
@@ -699,6 +701,10 @@ $(document).ready(function() {
               alert('Error, check console');
               console.error(error);
           }
+
+          $('.r-updatedAt').each(function() {
+            $(this).text(timeConverter($(this).text()));
+          })
 
 
 
