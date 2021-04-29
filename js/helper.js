@@ -683,7 +683,7 @@ $(document).ready(function() {
                   <div class="review-side">
                     <div class="inner-wrapper">
                       <div class="review-footer">
-                        <span class="r-updatedAt">` + timeConverter(parseInt($(allReviews.nodes[i].updatedAt))) + `</span>
+                        <span class="r-updatedAt">` + timeConverter($(review.updatedAt)) + `</span>
                       </div>
                     </div>
                   </div>
