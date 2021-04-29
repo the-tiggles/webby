@@ -702,9 +702,6 @@ $(document).ready(function() {
               console.error(error);
           }
 
-          $('.r-updatedAt').each(function() {
-            $(this).text(timeConverter($(this).text()));
-          })
 
 
 
