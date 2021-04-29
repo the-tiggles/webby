@@ -93,6 +93,7 @@ $(document).ready(function() {
         this.loadGoogleSearch();
         this.searchStyling();
         this.portalClicks();
+        this.unixConverter();
       },
       loadGoogleSearch: function() {
           $.ajaxSetup ({
@@ -128,6 +129,20 @@ $(document).ready(function() {
         $('#sidebar').on('click', '.sidebar-item#reddit', function() {
           REDDIT.init();
         })
+      },
+      unixConverter: function() {
+        function timeConverter(UNIX_timestamp){
+          var a = new Date(UNIX_timestamp * 1000);
+          var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+          var year = a.getFullYear();
+          var month = months[a.getMonth()];
+          var date = a.getDate();
+          var hour = a.getHours();
+          var min = a.getMinutes();
+          var sec = a.getSeconds();
+          var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+          return time;
+        }
       }
   
      
@@ -499,17 +514,13 @@ $(document).ready(function() {
                   hasNextPage
                 }
                 nodes{
-                  id 
                   createdAt
                   updatedAt
                   body
                   summary 
-                  rating 
-                  ratingAmount 
+                  rating
                   score
-                  userRating
                   user{
-                    id 
                     name 
                     avatar{
                       large
@@ -661,6 +672,21 @@ $(document).ready(function() {
               for (i = 0; i< allReviews.nodes.length; i++) {
                 var review = allReviews.nodes[i];
                 console.log(review);
+                $(`
+                <li>
+                  <div class="profile-side">
+                    <div class="r-img" style="background-image: url('${review.user.avatar.large}');"></div>
+                    <spans class="r-author">${review.user.name}</span>
+                  </div>
+                  <div class="review-side">
+                    <div class="inner-wrapper">
+                      <div class="review-footer">
+                        <span class="r-updatedAt">` + timeConverter($(allReviews.nodes[i].updatedAt)) +  `</span>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                `).appendTo('ul#a-review-list');
               }
             }
             
