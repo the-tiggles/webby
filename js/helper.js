@@ -632,11 +632,17 @@ $(document).ready(function() {
               $(`<li data-attr="${allTags[i].description}">${allTags[i].name}</li>`).appendTo($('#section-tags ul'));
             }
             // Unofficial Links
-            // 4anime
             $(`<li>
-                <a class="link-4anime" href="//4anime.to/?s=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
+                  <a class="link-4anime" href="//4anime.to/?s=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
+                </li>
+                <li>
+                  <a class="link-animedao" href="//4animedao.to/search/?search=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
+                </li>
+                <li>
+                  <a class="link-animekisa" href="//animekisa.tv/search?q=` + theAnime.title.english.replace(' ', '+') + `" target="_blank"></a>
                 </li>
             `).appendTo('#section-ulinks ul');
+            
             // episodes
             for (i = 0; i < allEpisodes.length; i++) {
               $(`<li>
