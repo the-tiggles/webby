@@ -59,9 +59,7 @@
 						letter-spacing: 1.5px;
 						font-weight: 700;
 					}
-                    &:hover {
-                        opacity: 1;
-                    }
+                    
 					span:nth-child(1) {
 						flex-basis: 45%;
 					}
@@ -80,6 +78,7 @@
                     position: relative;
                     display: flex;
                     overflow: hidden;
+                    cursor: pointer;
                     .a-name {
                         // flex-basis: 45%;
                         display: block;
@@ -105,6 +104,9 @@
                             left: 0;
                             letter-spacing: .2px;
                         }
+                    }
+                    &:hover {
+                        opacity: 1;
                     }
                 }
 
