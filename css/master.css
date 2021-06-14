@@ -4790,11 +4790,16 @@ ul.home-list li {
   justify-content: space-between;
   color: white;
   opacity: 0.5;
+  transition: all 0.33s ease;
 }
 ul.home-list li:nth-child(1) {
+  opacity: 1;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 700;
+}
+ul.home-list li:hover {
+  opacity: 1;
 }
 ul.home-list li span:nth-child(1) {
   flex-basis: 45%;
