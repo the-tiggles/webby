@@ -793,6 +793,14 @@
       "oAP" : "\/includes\/part-home-main-output.html",
       "oF" : 0
     },
+    "\/includes\/part-reddit-main-output.html" : {
+      "cB" : 1,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/includes\/part-reddit-main-output-output.html",
+      "oF" : 0
+    },
     "\/includes\/part-reddit-main.html" : {
       "cB" : 1,
       "ft" : 8192,
