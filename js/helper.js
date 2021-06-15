@@ -137,7 +137,13 @@ $(document).ready(function() {
           if (theHash == 'reddit') {
             REDDIT.init();
             WEATHER.init();
+          } 
+          else {
+            HOME.init();
+            ANIME.init();
+            WEATHER.init();
           }
+
 
         } else {
           // no hash
