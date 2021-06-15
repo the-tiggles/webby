@@ -127,14 +127,13 @@ $(document).ready(function() {
         })
       },
       checkHash: function() {
+
+        var theHash = window.location.hash.substring(1);
         if (window.location.hash) {
           // hash be here
-          var theHash = window.location.hash.substring(1);
+          
           // console.log('the hash is ' + theHash);
-          if (theHash == '' || theHash.length < 1) {
-            HOME.init();
-            ANIME.init();
-          }
+          
           if (theHash == 'reddit') {
             REDDIT.init();
             
@@ -142,6 +141,11 @@ $(document).ready(function() {
 
         } else {
           // no hash
+          if (theHash == '' || theHash.length < 1) {
+            console.log('is nothing here')
+            HOME.init();
+            ANIME.init();
+          }
         }
       }
   
