@@ -419,7 +419,7 @@ nav.flex-nav ul#mainnav > li > ul > li:hover > ul {
   justify-content: center;
 }
 #site-wrapper #sidebar .sidebar-wrapper #profile .profile-image {
-  background-image: url("/css/images/ui/profile.svg");
+  background-image: url("images/ui/profile.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
