@@ -28,9 +28,7 @@ $(document).ready(function() {
   
     var isHome = $('body.home').length,
         isDefault = $('body.default').length,
-        isReddit = $('body.reddit').length,
-        isSitemap = $('div.sitemap').length,
-        is404 = $('body > form.http-404').length;
+        isReddit = $('body.reddit').length;
   
   
     // ================================
@@ -49,11 +47,9 @@ $(document).ready(function() {
         NEWS.init();
         
         // Initialize Page Template Objects
-        if (isHome) { HOME.init(); ANIME.init(); }
+        // if (isHome) { HOME.init(); ANIME.init(); }
         if (isReddit) {REDDIT.init();}
         if (isDefault) { DEFAULT.init(); }
-        if (isSitemap) { SITEMAP.init(); }
-        if (is404) { PAGE_404.init(); }
       }
   
     };
@@ -133,8 +129,16 @@ $(document).ready(function() {
       checkHash: function() {
         if (window.location.hash) {
           // hash be here
-          var theHash = window.location.hash;
-          console.log('the hash is ' + theHash);
+          var theHash = window.location.hash.substring(1);
+          // console.log('the hash is ' + theHash);
+          if (theHash == '' || theHash.length < 1) {
+            HOME.init();
+            ANIME.init();
+          }
+          if (theHash == 'reddit') {
+            REDDIT.init();
+            
+          }
 
         } else {
           // no hash
