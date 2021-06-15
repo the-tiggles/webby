@@ -120,10 +120,11 @@ $(document).ready(function() {
         $('#sidebar').on('click', '.sidebar-item#home', function() {
           HOME.init();
           WEATHER.init();
-          NEWS.init();
+          ANIME.init();
         });
         $('#sidebar').on('click', '.sidebar-item#reddit', function() {
           REDDIT.init();
+          WEATHER.init();
         })
       },
       checkHash: function() {
@@ -131,20 +132,17 @@ $(document).ready(function() {
         var theHash = window.location.hash.substring(1);
         if (window.location.hash) {
           // hash be here
-          
-          // console.log('the hash is ' + theHash);
-          
           if (theHash == 'reddit') {
             REDDIT.init();
-            
+            WEATHER.init();
           }
 
         } else {
           // no hash
           if (theHash == '' || theHash.length < 1) {
-            console.log('is nothing here')
             HOME.init();
             ANIME.init();
+            WEATHER.init();
           }
         }
       }
