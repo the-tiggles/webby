@@ -93,7 +93,7 @@ $(document).ready(function() {
         this.loadGoogleSearch();
         this.searchStyling();
         this.portalClicks();
-        this.unixConverter();
+        this.checkHash();
       },
       loadGoogleSearch: function() {
           $.ajaxSetup ({
@@ -130,8 +130,15 @@ $(document).ready(function() {
           REDDIT.init();
         })
       },
-      unixConverter: function() {
-       
+      checkHash: function() {
+        if (window.location.hash) {
+          // hash be here
+          var theHash = window.location.hash;
+          console.log('the hash is ' + theHash);
+
+        } else {
+          // no hash
+        }
       }
   
      
@@ -428,7 +435,7 @@ $(document).ready(function() {
       },
       animeListClearAll: function() {
         $('section#main').on('click', 'a#clear-watchlist', function() {
-          console.log('the button has been pushed');
+          // console.log('the button has been pushed');
           Cookies.remove('AnimeList');
           $('#anime-list .home-list > li:not(:first-child)').remove();
         })
@@ -767,7 +774,7 @@ $(document).ready(function() {
             Cookies.set('userZip', inputZip, {
               expires: 365
             });
-            console.log('cookie is now created w zip of ' + inputZip);
+            // console.log('cookie is now created w zip of ' + inputZip);
             $('#weather-signin').html('<p>Your zip code has been set to<br>' + inputZip + '.</p>');
             setTimeout(function() {
               $('#weather-signin').addClass('hidden');
@@ -831,7 +838,7 @@ $(document).ready(function() {
               descValue = data['weather'][0]['description'],
               tempRounded = tempValue.toFixed(1);
   
-              console.log(data);
+              // console.log(data);
               $('.current-weather .temperature .value').text(tempRounded);
               $('.unit-selector a.active').removeClass('active');
               $('.unit-selector #imperial').addClass('active');
@@ -865,7 +872,7 @@ $(document).ready(function() {
               descValue = data['weather'][0]['description'],
               tempRounded = tempValue.toFixed(1);
 
-              console.log(data);
+              // console.log(data);
               $('.current-weather .temperature .value').text(tempRounded);
               $('.current-weather .location span').text(nameValue);
               $('.current-weather .right-side .weather-description').text(descValue);
@@ -988,6 +995,7 @@ $(document).ready(function() {
        this.classChanges();
        this.transitionContent();
        this.loadRedditMain();
+       this.unhideLogin();
        this.checkLoggedIn();
       },
       classChanges: function() {
@@ -1006,7 +1014,10 @@ $(document).ready(function() {
       loadRedditMain: function() {
         $('#home-content').load('includes/part-reddit-main.html');
       },
-      checkLoggedIn() {
+      checkLoggedIn: function() {
+
+      },
+      unhideLogin() {
         setTimeout(function() {
           $('#reddit-login').removeClass('hidden');
         }, 500)
