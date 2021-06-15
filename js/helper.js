@@ -131,6 +131,7 @@ $(document).ready(function() {
 
         var theHash = window.location.hash.substring(1);
         if (window.location.hash) {
+          console.log('THERE IS a hash')
           // hash be here
           if (theHash == 'reddit') {
             REDDIT.init();
@@ -139,7 +140,7 @@ $(document).ready(function() {
 
         } else {
           // no hash
-          
+          console.log('no hash here');
           HOME.init();
           ANIME.init();
           WEATHER.init();
