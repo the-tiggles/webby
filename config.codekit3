@@ -817,6 +817,14 @@
       "oAP" : "\/includes\/part-search-google-output.html",
       "oF" : 0
     },
+    "\/includes\/sidebar-output.html" : {
+      "cB" : 1,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/includes\/sidebar-output-output.html",
+      "oF" : 0
+    },
     "\/includes\/sidebar.html" : {
       "cB" : 1,
       "ft" : 8192,
@@ -878,6 +886,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/js\/external\/shuffle-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/js\/external\/snoowrap.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/js\/external\/snoowrap.min-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0

@@ -139,6 +139,7 @@ $(document).ready(function() {
             WEATHER.init();
           } 
           else {
+            // for some reason the oauth return on reddit is a false positive on hash
             HOME.init();
             ANIME.init();
             WEATHER.init();
