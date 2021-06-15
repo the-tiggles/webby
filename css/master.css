@@ -443,6 +443,7 @@ nav.flex-nav ul#mainnav > li > ul > li:hover > ul {
   transition: all 0.33s ease;
   cursor: pointer;
   opacity: 0.5;
+  color: white;
 }
 #site-wrapper #sidebar .sidebar-wrapper .sidebar-item.active {
   border-color: #00D68D;

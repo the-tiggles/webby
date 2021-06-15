@@ -1,11 +1,12 @@
-
 #site-wrapper {
 	display: flex;
 	justify-content: space-between;
-  position: relative;
+	position: relative;
+
 	#sidebar {
 		height: 100vh;
 		flex-basis: 220px;
+
 		.sidebar-wrapper {
 			padding-top: 50px;
 			height: 100%;
@@ -13,28 +14,31 @@
 			color: white;
 			width: 75px;
 			transition: all .33s ease;
-      
-      #profile {
-        height: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .profile-image {
-          background-image: url('images/ui/profile.svg');
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          border-radius: 50%;
-          width: 50px;
-          height: 50px;
-          left: 12px;
-          position: absolute;
-          cursor: pointer;
-        }
-        .login-name {
-          cursor: pointer;
-        }
-      }
+
+			#profile {
+				height: 50px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				.profile-image {
+					background-image: url('images/ui/profile.svg');
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					border-radius: 50%;
+					width: 50px;
+					height: 50px;
+					left: 12px;
+					position: absolute;
+					cursor: pointer;
+				}
+
+				.login-name {
+					cursor: pointer;
+				}
+			}
+
 			.sidebar-item {
 				position: relative;
 				height: 50px;
@@ -45,16 +49,21 @@
 				transition: all .33s ease;
 				cursor: pointer;
 				opacity: .5;
+				color: white;
+
 				&.active {
 					border-color: $green;
 					opacity: 1;
 				}
+
 				&:hover {
 					opacity: 1;
 				}
+
 				&#home {
 					margin-top: 70px;
 				}
+
 				div {
 					position: absolute;
 					left: 0px;
@@ -66,42 +75,50 @@
 					background-repeat: no-repeat;
 					content: "";
 					margin-right: 20px;
+
 					&.icon-home {
 						background-image: url('images/ui/home.svg');
 					}
+
 					&.icon-reddit {
 						background-image: url('images/ui/reddit.svg');
 					}
+
 					&.icon-spotify {
 						background-image: url('images/ui/spotify.svg');
 					}
+
 					&.icon-discord {
 						background-image: url('images/ui/discord.svg');
 					}
+
 					&.icon-settings {
 						background-image: url('images/ui/tools.svg');
 					}
 				}
-				
+
 			}
-      p {
-        position: absolute;
-        margin-left: 80px;
-        font-size: 16px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all .33s ease;
-      }
+
+			p {
+				position: absolute;
+				margin-left: 80px;
+				font-size: 16px;
+				opacity: 0;
+				visibility: hidden;
+				transition: all .33s ease;
+			}
 		}
+
 		&:hover {
 			.sidebar-wrapper {
 				width: 100%;
 			}
-      p {
-        visibility: visible;
-        opacity: 1;
-      }
-			
+
+			p {
+				visibility: visible;
+				opacity: 1;
+			}
+
 		}
 	}
 }
