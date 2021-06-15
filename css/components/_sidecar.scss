@@ -42,9 +42,10 @@
 			.sidebar-item {
 				position: relative;
 				height: 50px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
+				display: inline-flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
 				border-left: 4px solid black;
 				transition: all .33s ease;
 				cursor: pointer;
