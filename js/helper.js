@@ -139,11 +139,11 @@ $(document).ready(function() {
 
         } else {
           // no hash
-          if (theHash == '' || theHash.length < 1) {
-            HOME.init();
-            ANIME.init();
-            WEATHER.init();
-          }
+          
+          HOME.init();
+          ANIME.init();
+          WEATHER.init();
+          
         }
       }
   
