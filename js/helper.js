@@ -133,6 +133,7 @@ $(document).ready(function() {
         if (window.location.hash) {
           console.log('THERE IS a hash')
           // hash be here
+          console.log(theHash);
           if (theHash == 'reddit') {
             REDDIT.init();
             WEATHER.init();
