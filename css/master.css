@@ -434,6 +434,7 @@ nav.flex-nav ul#mainnav > li > ul > li:hover > ul {
   cursor: pointer;
 }
 #site-wrapper #sidebar .sidebar-wrapper .sidebar-item {
+  width: 100%;
   position: relative;
   height: 50px;
   display: inline-flex;
