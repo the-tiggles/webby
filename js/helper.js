@@ -218,7 +218,85 @@ $(document).ready(function($) {
           window.location = authenticationUrl;
         }
 
-        const code = new URL(window.location.href).searchParams.get('code');
+        function useAuth() {
+
+          // set those vars
+          var code = new URL(window.location.href).searchParams.get('code');
+          var state = new URL(window.location.href).searchParams.get('state');
+
+          // remove the auth from the url
+          var clean_uri = location.protocol + "//" + location.host + location.pathname;
+          window.history.replaceState({}, document.title, clean_uri);
+
+          snoowrap.fromAuthCode({
+            code: code,
+            userAgent: 'Tiggles Installed App on Browser',
+            clientId: '8KyK8FAzO_5T6A',
+            clientSecret: '',
+            redirectUri: 'https://the-tiggles.github.io/webby'
+          }).then(r => {
+            return r.getHot({limit: 7}).then(posts => {
+              console.log(posts);
+              for (i = 0; i < posts.length; i++) {
+                $(`
+                <li>
+                    <div class="upvote-wrapper">
+                        <div class="upvote-arrow"></div>
+                        <span class="upvote-count">${posts[i].score}</span>
+                        <div class="downvote-arrow"></div>
+                    </div>
+                    <div class="content-wrapper">
+                        <div class="post-info">
+                            <div class="post-meta-info">
+                                <a href="//reddit.com/${posts[i].subreddit_name_prefixed}" class="post-community">
+                                    <div class="post-community-image">
+                                    </div>
+                                    <span class="post-community-name">${posts[i].subreddit_name_prefixed}</span>
+                                </a>
+                                <span class="post-author">
+                                    Posted by&nbsp;${posts[i].author_fullname}&nbsp;${posts[i].created} ago
+                                </span>
+                                <ul class="post-flair">
+                                    ${posts[i].all_awardings.map((award) => `
+                                        <li>
+                                            <div class="flair-img"><img src="${award.icon_url}" alt="${award.description}"></div>
+                                            <span class="flair-count">${award.count}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                            <p class="post-title"><a href="//reddit.com${posts[i].permalink}">${posts[i].title}</a></p>
+                            <div class="post-preview">
+                             
+                            </div>
+                            <div class="post-footer-info">
+                                <div class="comments">
+                                    <span>${posts[i].num_comments} Comments</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                `).appendTo('#news-list ul.all-news');
+              }
+            });
+          });
+        }
+        createAuth1();
+        useAuth();
+
+        
+
+
+
+
+
+
+
+
+
+
+
 
         function createInstance(refreshToken) {
           return new snoowrap({
