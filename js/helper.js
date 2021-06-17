@@ -1,7 +1,7 @@
 /* _helper.js */
 
-$(document).ready(function() {
-    // var jQuery = $;
+$(document).ready(function($) {
+    var jQuery = $;
   
     // ================================
     // Setup Objects and Selectors
@@ -229,9 +229,10 @@ $(document).ready(function() {
           })
         }
 
-        const instance = createInstance(code);
+        var theInstance = createInstance(code);
+        // var response = await theInstance.catch((err) => { console.error(err); });
         try {
-          console.log(await instance.getHot());
+          console.log(response);
         } catch(e) {
           console.log('doing this thaaang')
           console.log(JSON.stringify(e, null, 2));
