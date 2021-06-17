@@ -589,6 +589,26 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/css\/images\/ui\/reddit-comment.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/css\/images\/ui\/reddit-comment.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/css\/images\/ui\/reddit-downvote-arrow.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/css\/images\/ui\/reddit-downvote-arrow.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/css\/images\/ui\/reddit-snoo.png" : {
       "ft" : 32768,
       "iS" : 88089,
@@ -601,6 +621,16 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
+    },
+    "\/css\/images\/ui\/reddit-upvote-arrow.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/css\/images\/ui\/reddit-upvote-arrow.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
     },
     "\/css\/images\/ui\/reddit.svg" : {
       "ft" : 2097152,
