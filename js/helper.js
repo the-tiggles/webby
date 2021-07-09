@@ -898,7 +898,7 @@ $(document).ready(function($) {
 
         // register user's zip as cookie var
         function submitZip() {
-          if ($('input#userZip').val().length) {
+          if ($('input#userZip').val()) {
             var inputZip = $('input#userZip').val();
             Cookies.set('userZip', inputZip, {
               expires: 365
