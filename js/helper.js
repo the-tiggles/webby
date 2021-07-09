@@ -1144,17 +1144,7 @@ $(document).ready(function($) {
         $('#home-content').load('includes/part-reddit-main.html');
       },
       checkLoggedIn: function() {
-        function getVar(variable) {
-              var query = window.location.search.substring(1);
-              var vars = query.split("&");
-              for (var i=0;i<vars.length;i++) {
-                      var pair = vars[i].split("=");
-                      if(pair[0] == variable){return pair[1];}
-              }
-              return(false);
-        }
-        getVar("code");
-        getVar('state');
+    
 
 
         // $.ajax({
@@ -1166,7 +1156,7 @@ $(document).ready(function($) {
         //   },
         //   data: {
         //     grant_type: 'authorization_code',
-        //     code: getQueryVariable("code"),
+        //     code: getVar("code"),
         //     redirect_uri: 'https://the-tiggles.github.io/webby'
         //   },
         //   success: function(result) {
@@ -1179,11 +1169,6 @@ $(document).ready(function($) {
         //   }
         // })
 
-
-        // var http = new XMLHttpRequest();
-        var url = 'https://www.reddit.com/api/v1/access_token';
-        // var rUrl = 'https://the-tiggles.github.io/webby'
-        // var params = 'grant_type=authorization_code&code=' + getVar("code") + '&redirect_uri=' + rUrl;
         var data = {
           grant_type: 'authorization_code',
           code: getVar("code"),
@@ -1206,7 +1191,7 @@ $(document).ready(function($) {
         // var r = new snoowrap({
         //   userAgent: 'A unique browser experience with anime and reddit',
         //   clientId: 'cQLY-btbx4lhmw',
-        //   clientSecret: '	L_FuRr8vbwbXi0QBeqMluCPK9MFu1Q',
+        //   // clientSecret: '	L_FuRr8vbwbXi0QBeqMluCPK9MFu1Q',
         //   refreshToken: ''
         // });
 
@@ -1221,7 +1206,6 @@ $(document).ready(function($) {
           window.location.href = authenticationUrl;
         }
 
-        var code = new URL(window.location.href).searchParams.get('code');
 
         function createInstance(accessToken) {
           return new snoowrap({
@@ -1233,33 +1217,29 @@ $(document).ready(function($) {
         }
         var instance = createInstance(code);
         try {
-          // console.log(await instance.getHot())
+          console.log(await instance.getHot())
         } catch(e) {
-          // console.log(JSON.stringify(e, null, 2))
+          console.log(JSON.stringify(e, null, 2))
         }
 
 
-        // snoowrap.fromAuthCode({
-        //   code: code,
-        //   userAgent: 'User-Agent: web:https://the-tiggles.github.io/webby:v1 (by /u/tiggaaaaah)',
-        //   clientId: 'cQLY-btbx4lhmw',
-        //   redirectUri: 'https://the-tiggles.github.io/webby'
-        // }).then( r=> {
-        //   return r.getHot().then(posts=> {
-        //     console.log('it worked, here are the posts');
-        //     console.log(posts);
-        //   })
-        // })
+        var code = new URL(window.location.href).searchParams.get('code');
+
+        snoowrap.fromAuthCode({
+          code: code,
+          userAgent: 'User-Agent: web:https://the-tiggles.github.io/webby:v1 (by /u/tiggaaaaah)',
+          clientId: 'cQLY-btbx4lhmw',
+          redirectUri: 'https://the-tiggles.github.io/webby'
+        }).then( r=> {
+          return r.getHot().then(posts=> {
+            console.log('it worked, here are the posts');
+            console.log(posts);
+          })
+        })
 
 
 
         r.getSubscriptions({limit: 5}).then(console.log);
-
-
-
-
-
-
 
 
 
