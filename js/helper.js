@@ -1217,7 +1217,7 @@ $(document).ready(function($) {
         }
         var instance = createInstance(code);
         try {
-          console.log(await instance.getHot())
+          // console.log(await instance.getHot())
         } catch(e) {
           console.log(JSON.stringify(e, null, 2))
         }
